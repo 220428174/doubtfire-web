@@ -86,9 +86,11 @@
         </mat-checkbox>
       </section>
 
+
+      ####FIXED##### - needs link to API to signout
       <div fxLayout="row" fxFlexFill style="padding-top: 12px">
-        <button [hidden]="mode === 'edit'" fxFlexAlign="start" type="button" mat-stroked-button (click)="signOut()">
-          Sign Out
+        <button [hidden]="mode === 'edit'" fxFlexAlign="start" type="button" mat-stroked-button (click)="submit()">
+          Submit
         </button>
         <div fxFlex></div>
         <button
