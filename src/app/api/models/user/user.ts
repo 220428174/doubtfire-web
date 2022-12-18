@@ -30,10 +30,13 @@ export class User extends Entity {
   }
 
   public get name(): string {
-    const fn = this.firstName.slice(0, 11);
-    const sn = this.lastName.slice(0, 11);
-    const nn = this.nickname && this.nickname.trim() ? ` (${this.nickname.trim().slice(0, 11)})` : '';
-    return `${fn} ${sn}${nn}`;
+    if (this.firstName){
+      const fn = this.firstName.slice(0, 11);
+      const sn = this.lastName.slice(0, 11);
+      const nn = this.nickname && this.nickname.trim() ? ` (${this.nickname.trim().slice(0, 11)})` : '';
+      return `${fn} ${sn}${nn}`;
+    }
+    return ``;
   }
 
   public matches(text: string): boolean {
